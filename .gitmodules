@@ -1,0 +1,4 @@
+[submodule "lib/afr"]
+	path = lib/afr
+	url = git@github.com:dachalco/amazon-freertos.git
+	branch = dev/wifi-provisioning

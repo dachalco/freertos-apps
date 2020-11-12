@@ -1,0 +1,1253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="65">
+  <logicalFolder name="root" displayName="root" projectFiles="true">
+    <logicalFolder name="HeaderFiles" displayName="inc" projectFiles="true">
+      <itemPath>../inc/iot_softap_wifi_provisioning.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="freertos_kernel" displayName="kernel" projectFiles="true">
+      <logicalFolder name="include" displayName="include" projectFiles="true">
+        <itemPath>../../../lib/afr/freertos_kernel/include/timers.h</itemPath>
+        <itemPath>../../../lib/afr/freertos_kernel/include/task.h</itemPath>
+        <itemPath>../../../lib/afr/freertos_kernel/include/message_buffer.h</itemPath>
+        <itemPath>../../../lib/afr/freertos_kernel/include/mpu_prototypes.h</itemPath>
+        <itemPath>../../../lib/afr/freertos_kernel/include/deprecated_definitions.h</itemPath>
+        <itemPath>../../../lib/afr/freertos_kernel/include/semphr.h</itemPath>
+        <itemPath>../../../lib/afr/freertos_kernel/include/mpu_wrappers.h</itemPath>
+        <itemPath>../../../lib/afr/freertos_kernel/include/croutine.h</itemPath>
+        <itemPath>../../../lib/afr/freertos_kernel/include/event_groups.h</itemPath>
+        <itemPath>../../../lib/afr/freertos_kernel/include/list.h</itemPath>
+        <itemPath>../../../lib/afr/freertos_kernel/include/portable.h</itemPath>
+        <itemPath>../../../lib/afr/freertos_kernel/include/stream_buffer.h</itemPath>
+        <itemPath>../../../lib/afr/freertos_kernel/include/StackMacros.h</itemPath>
+        <itemPath>../../../lib/afr/freertos_kernel/include/FreeRTOS.h</itemPath>
+        <itemPath>../../../lib/afr/freertos_kernel/include/projdefs.h</itemPath>
+        <itemPath>../../../lib/afr/freertos_kernel/include/queue.h</itemPath>
+        <itemPath>../../../lib/afr/freertos_kernel/include/stack_macros.h</itemPath>
+        <itemPath>../../../lib/afr/freertos_kernel/include/atomic.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="portable" displayName="portable" projectFiles="true">
+        <logicalFolder name="ARMClang" displayName="ARMClang" projectFiles="true">
+        </logicalFolder>
+        <logicalFolder name="ARMv8M" displayName="ARMv8M" projectFiles="true">
+          <logicalFolder name="non_secure" displayName="non_secure" projectFiles="true">
+            <logicalFolder name="portable" displayName="portable" projectFiles="true">
+              <logicalFolder name="GCC" displayName="GCC" projectFiles="true">
+                <logicalFolder name="ARM_CM23" displayName="ARM_CM23" projectFiles="true">
+                  <itemPath>../../../lib/afr/freertos_kernel/portable/ARMv8M/non_secure/portable/GCC/ARM_CM23/portmacro.h</itemPath>
+                  <itemPath>../../../lib/afr/freertos_kernel/portable/ARMv8M/non_secure/portable/GCC/ARM_CM23/portasm.c</itemPath>
+                </logicalFolder>
+                <logicalFolder name="ARM_CM23_NTZ"
+                               displayName="ARM_CM23_NTZ"
+                               projectFiles="true">
+                  <itemPath>../../../lib/afr/freertos_kernel/portable/ARMv8M/non_secure/portable/GCC/ARM_CM23_NTZ/portmacro.h</itemPath>
+                  <itemPath>../../../lib/afr/freertos_kernel/portable/ARMv8M/non_secure/portable/GCC/ARM_CM23_NTZ/portasm.c</itemPath>
+                </logicalFolder>
+                <logicalFolder name="ARM_CM33" displayName="ARM_CM33" projectFiles="true">
+                  <itemPath>../../../lib/afr/freertos_kernel/portable/ARMv8M/non_secure/portable/GCC/ARM_CM33/portmacro.h</itemPath>
+                  <itemPath>../../../lib/afr/freertos_kernel/portable/ARMv8M/non_secure/portable/GCC/ARM_CM33/portasm.c</itemPath>
+                </logicalFolder>
+                <logicalFolder name="ARM_CM33_NTZ"
+                               displayName="ARM_CM33_NTZ"
+                               projectFiles="true">
+                  <itemPath>../../../lib/afr/freertos_kernel/portable/ARMv8M/non_secure/portable/GCC/ARM_CM33_NTZ/portmacro.h</itemPath>
+                  <itemPath>../../../lib/afr/freertos_kernel/portable/ARMv8M/non_secure/portable/GCC/ARM_CM33_NTZ/portasm.c</itemPath>
+                </logicalFolder>
+              </logicalFolder>
+              <logicalFolder name="IAR" displayName="IAR" projectFiles="true">
+                <logicalFolder name="ARM_CM23" displayName="ARM_CM23" projectFiles="true">
+                  <itemPath>../../../lib/afr/freertos_kernel/portable/ARMv8M/non_secure/portable/IAR/ARM_CM23/portasm.s</itemPath>
+                  <itemPath>../../../lib/afr/freertos_kernel/portable/ARMv8M/non_secure/portable/IAR/ARM_CM23/portmacro.h</itemPath>
+                </logicalFolder>
+                <logicalFolder name="ARM_CM23_NTZ"
+                               displayName="ARM_CM23_NTZ"
+                               projectFiles="true">
+                  <itemPath>../../../lib/afr/freertos_kernel/portable/ARMv8M/non_secure/portable/IAR/ARM_CM23_NTZ/portasm.s</itemPath>
+                  <itemPath>../../../lib/afr/freertos_kernel/portable/ARMv8M/non_secure/portable/IAR/ARM_CM23_NTZ/portmacro.h</itemPath>
+                </logicalFolder>
+                <logicalFolder name="ARM_CM33" displayName="ARM_CM33" projectFiles="true">
+                  <itemPath>../../../lib/afr/freertos_kernel/portable/ARMv8M/non_secure/portable/IAR/ARM_CM33/portasm.s</itemPath>
+                  <itemPath>../../../lib/afr/freertos_kernel/portable/ARMv8M/non_secure/portable/IAR/ARM_CM33/portmacro.h</itemPath>
+                </logicalFolder>
+                <logicalFolder name="ARM_CM33_NTZ"
+                               displayName="ARM_CM33_NTZ"
+                               projectFiles="true">
+                  <itemPath>../../../lib/afr/freertos_kernel/portable/ARMv8M/non_secure/portable/IAR/ARM_CM33_NTZ/portasm.s</itemPath>
+                  <itemPath>../../../lib/afr/freertos_kernel/portable/ARMv8M/non_secure/portable/IAR/ARM_CM33_NTZ/portmacro.h</itemPath>
+                </logicalFolder>
+              </logicalFolder>
+            </logicalFolder>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/ARMv8M/non_secure/portasm.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/ARMv8M/non_secure/port.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="secure" displayName="secure" projectFiles="true">
+            <logicalFolder name="context" displayName="context" projectFiles="true">
+              <logicalFolder name="portable" displayName="portable" projectFiles="true">
+                <logicalFolder name="GCC" displayName="GCC" projectFiles="true">
+                  <logicalFolder name="ARM_CM23" displayName="ARM_CM23" projectFiles="true">
+                    <itemPath>../../../lib/afr/freertos_kernel/portable/ARMv8M/secure/context/portable/GCC/ARM_CM23/secure_context_port.c</itemPath>
+                  </logicalFolder>
+                  <logicalFolder name="ARM_CM33" displayName="ARM_CM33" projectFiles="true">
+                    <itemPath>../../../lib/afr/freertos_kernel/portable/ARMv8M/secure/context/portable/GCC/ARM_CM33/secure_context_port.c</itemPath>
+                  </logicalFolder>
+                </logicalFolder>
+                <logicalFolder name="IAR" displayName="IAR" projectFiles="true">
+                  <logicalFolder name="ARM_CM23" displayName="ARM_CM23" projectFiles="true">
+                    <itemPath>../../../lib/afr/freertos_kernel/portable/ARMv8M/secure/context/portable/IAR/ARM_CM23/secure_context_port.c</itemPath>
+                    <itemPath>../../../lib/afr/freertos_kernel/portable/ARMv8M/secure/context/portable/IAR/ARM_CM23/secure_context_port_asm.s</itemPath>
+                  </logicalFolder>
+                  <logicalFolder name="ARM_CM33" displayName="ARM_CM33" projectFiles="true">
+                    <itemPath>../../../lib/afr/freertos_kernel/portable/ARMv8M/secure/context/portable/IAR/ARM_CM33/secure_context_port.c</itemPath>
+                    <itemPath>../../../lib/afr/freertos_kernel/portable/ARMv8M/secure/context/portable/IAR/ARM_CM33/secure_context_port_asm.s</itemPath>
+                  </logicalFolder>
+                </logicalFolder>
+              </logicalFolder>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/ARMv8M/secure/context/secure_context.c</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/ARMv8M/secure/context/secure_context.h</itemPath>
+            </logicalFolder>
+            <logicalFolder name="heap" displayName="heap" projectFiles="true">
+              <itemPath>../../../lib/afr/freertos_kernel/portable/ARMv8M/secure/heap/secure_heap.h</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/ARMv8M/secure/heap/secure_heap.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="init" displayName="init" projectFiles="true">
+              <itemPath>../../../lib/afr/freertos_kernel/portable/ARMv8M/secure/init/secure_init.h</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/ARMv8M/secure/init/secure_init.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="macros" displayName="macros" projectFiles="true">
+              <itemPath>../../../lib/afr/freertos_kernel/portable/ARMv8M/secure/macros/secure_port_macros.h</itemPath>
+            </logicalFolder>
+          </logicalFolder>
+        </logicalFolder>
+        <logicalFolder name="BCC" displayName="BCC" projectFiles="true">
+          <logicalFolder name="16BitDOS" displayName="16BitDOS" projectFiles="true">
+            <logicalFolder name="common" displayName="common" projectFiles="true">
+              <itemPath>../../../lib/afr/freertos_kernel/portable/BCC/16BitDOS/common/portasm.h</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/BCC/16BitDOS/common/portcomn.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="Flsh186" displayName="Flsh186" projectFiles="true">
+              <itemPath>../../../lib/afr/freertos_kernel/portable/BCC/16BitDOS/Flsh186/prtmacro.h</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/BCC/16BitDOS/Flsh186/port.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="PC" displayName="PC" projectFiles="true">
+              <itemPath>../../../lib/afr/freertos_kernel/portable/BCC/16BitDOS/PC/prtmacro.h</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/BCC/16BitDOS/PC/port.c</itemPath>
+            </logicalFolder>
+          </logicalFolder>
+        </logicalFolder>
+        <logicalFolder name="CCS" displayName="CCS" projectFiles="true">
+          <logicalFolder name="ARM_CM3" displayName="ARM_CM3" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/CCS/ARM_CM3/portasm.asm</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/CCS/ARM_CM3/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/CCS/ARM_CM3/port.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="ARM_CM4F" displayName="ARM_CM4F" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/CCS/ARM_CM4F/portasm.asm</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/CCS/ARM_CM4F/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/CCS/ARM_CM4F/port.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="ARM_Cortex-R4"
+                         displayName="ARM_Cortex-R4"
+                         projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/CCS/ARM_Cortex-R4/portASM.asm</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/CCS/ARM_Cortex-R4/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/CCS/ARM_Cortex-R4/port.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="MSP430X" displayName="MSP430X" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/CCS/MSP430X/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/CCS/MSP430X/data_model.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/CCS/MSP430X/port.c</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/CCS/MSP430X/portext.asm</itemPath>
+          </logicalFolder>
+        </logicalFolder>
+        <logicalFolder name="CodeWarrior" displayName="CodeWarrior" projectFiles="true">
+          <logicalFolder name="ColdFire_V1" displayName="ColdFire_V1" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/CodeWarrior/ColdFire_V1/portasm.S</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/CodeWarrior/ColdFire_V1/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/CodeWarrior/ColdFire_V1/port.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="ColdFire_V2" displayName="ColdFire_V2" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/CodeWarrior/ColdFire_V2/portasm.S</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/CodeWarrior/ColdFire_V2/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/CodeWarrior/ColdFire_V2/port.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="HCS12" displayName="HCS12" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/CodeWarrior/HCS12/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/CodeWarrior/HCS12/port.c</itemPath>
+          </logicalFolder>
+        </logicalFolder>
+        <logicalFolder name="Common" displayName="Common" projectFiles="true">
+          <itemPath>../../../lib/afr/freertos_kernel/portable/Common/mpu_wrappers.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="GCC" displayName="GCC" projectFiles="true">
+          <logicalFolder name="ARM7_AT91FR40008"
+                         displayName="ARM7_AT91FR40008"
+                         projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM7_AT91FR40008/portISR.c</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM7_AT91FR40008/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM7_AT91FR40008/port.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="ARM7_AT91SAM7S"
+                         displayName="ARM7_AT91SAM7S"
+                         projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM7_AT91SAM7S/portISR.c</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM7_AT91SAM7S/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM7_AT91SAM7S/lib_AT91SAM7X256.c</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM7_AT91SAM7S/ioat91sam7x256.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM7_AT91SAM7S/port.c</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM7_AT91SAM7S/lib_AT91SAM7X256.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM7_AT91SAM7S/AT91SAM7X256.h</itemPath>
+          </logicalFolder>
+          <logicalFolder name="ARM7_LPC2000"
+                         displayName="ARM7_LPC2000"
+                         projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM7_LPC2000/portISR.c</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM7_LPC2000/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM7_LPC2000/port.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="ARM7_LPC23xx"
+                         displayName="ARM7_LPC23xx"
+                         projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM7_LPC23xx/portISR.c</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM7_LPC23xx/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM7_LPC23xx/port.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="ARM_CA53_64_BIT"
+                         displayName="ARM_CA53_64_BIT"
+                         projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM_CA53_64_BIT/portASM.S</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM_CA53_64_BIT/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM_CA53_64_BIT/port.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="ARM_CA9" displayName="ARM_CA9" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM_CA9/portASM.S</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM_CA9/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM_CA9/port.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="ARM_CM0" displayName="ARM_CM0" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM_CM0/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM_CM0/port.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="ARM_CM23" displayName="ARM_CM23" projectFiles="true">
+            <logicalFolder name="non_secure" displayName="non_secure" projectFiles="true">
+              <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM_CM23/non_secure/portasm.h</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM_CM23/non_secure/portmacro.h</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM_CM23/non_secure/port.c</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM_CM23/non_secure/portasm.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="secure" displayName="secure" projectFiles="true">
+              <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM_CM23/secure/secure_init.h</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM_CM23/secure/secure_context.c</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM_CM23/secure/secure_context_port.c</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM_CM23/secure/secure_heap.h</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM_CM23/secure/secure_init.c</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM_CM23/secure/secure_port_macros.h</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM_CM23/secure/secure_context.h</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM_CM23/secure/secure_heap.c</itemPath>
+            </logicalFolder>
+          </logicalFolder>
+          <logicalFolder name="ARM_CM23_NTZ"
+                         displayName="ARM_CM23_NTZ"
+                         projectFiles="true">
+            <logicalFolder name="non_secure" displayName="non_secure" projectFiles="true">
+              <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM_CM23_NTZ/non_secure/portasm.h</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM_CM23_NTZ/non_secure/portmacro.h</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM_CM23_NTZ/non_secure/port.c</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM_CM23_NTZ/non_secure/portasm.c</itemPath>
+            </logicalFolder>
+          </logicalFolder>
+          <logicalFolder name="ARM_CM3" displayName="ARM_CM3" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM_CM3/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM_CM3/port.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="ARM_CM33" displayName="ARM_CM33" projectFiles="true">
+            <logicalFolder name="non_secure" displayName="non_secure" projectFiles="true">
+              <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM_CM33/non_secure/portasm.h</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM_CM33/non_secure/portmacro.h</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM_CM33/non_secure/port.c</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM_CM33/non_secure/portasm.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="secure" displayName="secure" projectFiles="true">
+              <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM_CM33/secure/secure_init.h</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM_CM33/secure/secure_context.c</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM_CM33/secure/secure_context_port.c</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM_CM33/secure/secure_heap.h</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM_CM33/secure/secure_init.c</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM_CM33/secure/secure_port_macros.h</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM_CM33/secure/secure_context.h</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM_CM33/secure/secure_heap.c</itemPath>
+            </logicalFolder>
+          </logicalFolder>
+          <logicalFolder name="ARM_CM33_NTZ"
+                         displayName="ARM_CM33_NTZ"
+                         projectFiles="true">
+            <logicalFolder name="non_secure" displayName="non_secure" projectFiles="true">
+              <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM_CM33_NTZ/non_secure/portasm.h</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM_CM33_NTZ/non_secure/portmacro.h</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM_CM33_NTZ/non_secure/port.c</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM_CM33_NTZ/non_secure/portasm.c</itemPath>
+            </logicalFolder>
+          </logicalFolder>
+          <logicalFolder name="ARM_CM3_MPU" displayName="ARM_CM3_MPU" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM_CM3_MPU/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM_CM3_MPU/port.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="ARM_CM4_MPU" displayName="ARM_CM4_MPU" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM_CM4_MPU/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM_CM4_MPU/port.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="ARM_CM4F" displayName="ARM_CM4F" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM_CM4F/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM_CM4F/port.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="ARM_CM7" displayName="ARM_CM7" projectFiles="true">
+            <logicalFolder name="r0p1" displayName="r0p1" projectFiles="true">
+              <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM_CM7/r0p1/portmacro.h</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM_CM7/r0p1/port.c</itemPath>
+            </logicalFolder>
+          </logicalFolder>
+          <logicalFolder name="ARM_CR5" displayName="ARM_CR5" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM_CR5/portASM.S</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM_CR5/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM_CR5/port.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="ARM_CRx_No_GIC"
+                         displayName="ARM_CRx_No_GIC"
+                         projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM_CRx_No_GIC/portASM.S</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM_CRx_No_GIC/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ARM_CRx_No_GIC/port.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="ATMega323" displayName="ATMega323" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ATMega323/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ATMega323/port.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="AVR32_UC3" displayName="AVR32_UC3" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/AVR32_UC3/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/AVR32_UC3/port.c</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/AVR32_UC3/exception.S</itemPath>
+          </logicalFolder>
+          <logicalFolder name="AVR_AVRDx" displayName="AVR_AVRDx" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/AVR_AVRDx/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/AVR_AVRDx/porthardware.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/AVR_AVRDx/port.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="AVR_Mega0" displayName="AVR_Mega0" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/AVR_Mega0/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/AVR_Mega0/porthardware.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/AVR_Mega0/port.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="ColdFire_V2" displayName="ColdFire_V2" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ColdFire_V2/portasm.S</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ColdFire_V2/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/ColdFire_V2/port.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="CORTUS_APS3" displayName="CORTUS_APS3" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/CORTUS_APS3/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/CORTUS_APS3/port.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="H8S2329" displayName="H8S2329" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/H8S2329/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/H8S2329/port.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="HCS12" displayName="HCS12" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/HCS12/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/HCS12/port.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="IA32_flat" displayName="IA32_flat" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/IA32_flat/portASM.S</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/IA32_flat/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/IA32_flat/port.c</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/IA32_flat/ISR_Support.h</itemPath>
+          </logicalFolder>
+          <logicalFolder name="MCF5235" displayName="MCF5235" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/MCF5235/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/MCF5235/port.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="MicroBlaze" displayName="MicroBlaze" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/MicroBlaze/portasm.s</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/MicroBlaze/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/MicroBlaze/port.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="MicroBlazeV8"
+                         displayName="MicroBlazeV8"
+                         projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/MicroBlazeV8/portasm.S</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/MicroBlazeV8/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/MicroBlazeV8/port_exceptions.c</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/MicroBlazeV8/port.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="MicroBlazeV9"
+                         displayName="MicroBlazeV9"
+                         projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/MicroBlazeV9/portasm.S</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/MicroBlazeV9/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/MicroBlazeV9/port_exceptions.c</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/MicroBlazeV9/port.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="MSP430F449" displayName="MSP430F449" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/MSP430F449/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/MSP430F449/port.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="NiosII" displayName="NiosII" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/NiosII/port_asm.S</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/NiosII/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/NiosII/port.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="PPC405_Xilinx"
+                         displayName="PPC405_Xilinx"
+                         projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/PPC405_Xilinx/portasm.S</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/PPC405_Xilinx/FPU_Macros.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/PPC405_Xilinx/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/PPC405_Xilinx/port.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="PPC440_Xilinx"
+                         displayName="PPC440_Xilinx"
+                         projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/PPC440_Xilinx/portasm.S</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/PPC440_Xilinx/FPU_Macros.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/PPC440_Xilinx/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/PPC440_Xilinx/port.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="RISC-V" displayName="RISC-V" projectFiles="true">
+            <logicalFolder name="chip_specific_extensions"
+                           displayName="chip_specific_extensions"
+                           projectFiles="true">
+              <logicalFolder name="Pulpino_Vega_RV32M1RM"
+                             displayName="Pulpino_Vega_RV32M1RM"
+                             projectFiles="true">
+                <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/RISC-V/chip_specific_extensions/Pulpino_Vega_RV32M1RM/freertos_risc_v_chip_specific_extensions.h</itemPath>
+              </logicalFolder>
+              <logicalFolder name="RV32I_CLINT_no_extensions"
+                             displayName="RV32I_CLINT_no_extensions"
+                             projectFiles="true">
+                <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/RISC-V/chip_specific_extensions/RV32I_CLINT_no_extensions/freertos_risc_v_chip_specific_extensions.h</itemPath>
+              </logicalFolder>
+            </logicalFolder>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/RISC-V/portASM.S</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/RISC-V/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/RISC-V/port.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="RL78" displayName="RL78" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/RL78/portasm.S</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/RL78/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/RL78/port.c</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/RL78/isr_support.h</itemPath>
+          </logicalFolder>
+          <logicalFolder name="RX100" displayName="RX100" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/RX100/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/RX100/port.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="RX200" displayName="RX200" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/RX200/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/RX200/port.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="RX600" displayName="RX600" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/RX600/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/RX600/port.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="RX600v2" displayName="RX600v2" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/RX600v2/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/RX600v2/port.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="RX700v3_DPFPU"
+                         displayName="RX700v3_DPFPU"
+                         projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/RX700v3_DPFPU/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/RX700v3_DPFPU/port.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="STR75x" displayName="STR75x" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/STR75x/portISR.c</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/STR75x/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/STR75x/port.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="TriCore_1782"
+                         displayName="TriCore_1782"
+                         projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/TriCore_1782/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/TriCore_1782/port.c</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/GCC/TriCore_1782/porttrap.c</itemPath>
+          </logicalFolder>
+        </logicalFolder>
+        <logicalFolder name="IAR" displayName="IAR" projectFiles="true">
+          <logicalFolder name="78K0R" displayName="78K0R" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/78K0R/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/78K0R/port.c</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/78K0R/ISR_Support.h</itemPath>
+          </logicalFolder>
+          <logicalFolder name="ARM_CA5_No_GIC"
+                         displayName="ARM_CA5_No_GIC"
+                         projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/ARM_CA5_No_GIC/portASM.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/ARM_CA5_No_GIC/portASM.s</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/ARM_CA5_No_GIC/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/ARM_CA5_No_GIC/port.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="ARM_CA9" displayName="ARM_CA9" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/ARM_CA9/portASM.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/ARM_CA9/portASM.s</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/ARM_CA9/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/ARM_CA9/port.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="ARM_CM0" displayName="ARM_CM0" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/ARM_CM0/portasm.s</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/ARM_CM0/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/ARM_CM0/port.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="ARM_CM23" displayName="ARM_CM23" projectFiles="true">
+            <logicalFolder name="non_secure" displayName="non_secure" projectFiles="true">
+              <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/ARM_CM23/non_secure/portasm.h</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/ARM_CM23/non_secure/portasm.s</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/ARM_CM23/non_secure/portmacro.h</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/ARM_CM23/non_secure/port.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="secure" displayName="secure" projectFiles="true">
+              <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/ARM_CM23/secure/secure_init.h</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/ARM_CM23/secure/secure_context.c</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/ARM_CM23/secure/secure_context_port.c</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/ARM_CM23/secure/secure_heap.h</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/ARM_CM23/secure/secure_context_port_asm.s</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/ARM_CM23/secure/secure_init.c</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/ARM_CM23/secure/secure_port_macros.h</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/ARM_CM23/secure/secure_context.h</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/ARM_CM23/secure/secure_heap.c</itemPath>
+            </logicalFolder>
+          </logicalFolder>
+          <logicalFolder name="ARM_CM23_NTZ"
+                         displayName="ARM_CM23_NTZ"
+                         projectFiles="true">
+            <logicalFolder name="non_secure" displayName="non_secure" projectFiles="true">
+              <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/ARM_CM23_NTZ/non_secure/portasm.h</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/ARM_CM23_NTZ/non_secure/portasm.s</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/ARM_CM23_NTZ/non_secure/portmacro.h</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/ARM_CM23_NTZ/non_secure/port.c</itemPath>
+            </logicalFolder>
+          </logicalFolder>
+          <logicalFolder name="ARM_CM3" displayName="ARM_CM3" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/ARM_CM3/portasm.s</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/ARM_CM3/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/ARM_CM3/port.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="ARM_CM33" displayName="ARM_CM33" projectFiles="true">
+            <logicalFolder name="non_secure" displayName="non_secure" projectFiles="true">
+              <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/ARM_CM33/non_secure/portasm.h</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/ARM_CM33/non_secure/portasm.s</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/ARM_CM33/non_secure/portmacro.h</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/ARM_CM33/non_secure/port.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="secure" displayName="secure" projectFiles="true">
+              <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/ARM_CM33/secure/secure_init.h</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/ARM_CM33/secure/secure_context.c</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/ARM_CM33/secure/secure_context_port.c</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/ARM_CM33/secure/secure_heap.h</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/ARM_CM33/secure/secure_context_port_asm.s</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/ARM_CM33/secure/secure_init.c</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/ARM_CM33/secure/secure_port_macros.h</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/ARM_CM33/secure/secure_context.h</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/ARM_CM33/secure/secure_heap.c</itemPath>
+            </logicalFolder>
+          </logicalFolder>
+          <logicalFolder name="ARM_CM33_NTZ"
+                         displayName="ARM_CM33_NTZ"
+                         projectFiles="true">
+            <logicalFolder name="non_secure" displayName="non_secure" projectFiles="true">
+              <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/ARM_CM33_NTZ/non_secure/portasm.h</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/ARM_CM33_NTZ/non_secure/portasm.s</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/ARM_CM33_NTZ/non_secure/portmacro.h</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/ARM_CM33_NTZ/non_secure/port.c</itemPath>
+            </logicalFolder>
+          </logicalFolder>
+          <logicalFolder name="ARM_CM4F" displayName="ARM_CM4F" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/ARM_CM4F/portasm.s</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/ARM_CM4F/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/ARM_CM4F/port.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="ARM_CM4F_MPU"
+                         displayName="ARM_CM4F_MPU"
+                         projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/ARM_CM4F_MPU/portasm.s</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/ARM_CM4F_MPU/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/ARM_CM4F_MPU/port.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="ARM_CM7" displayName="ARM_CM7" projectFiles="true">
+            <logicalFolder name="r0p1" displayName="r0p1" projectFiles="true">
+              <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/ARM_CM7/r0p1/portasm.s</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/ARM_CM7/r0p1/portmacro.h</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/ARM_CM7/r0p1/port.c</itemPath>
+            </logicalFolder>
+          </logicalFolder>
+          <logicalFolder name="ARM_CRx_No_GIC"
+                         displayName="ARM_CRx_No_GIC"
+                         projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/ARM_CRx_No_GIC/portASM.s</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/ARM_CRx_No_GIC/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/ARM_CRx_No_GIC/port.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="ATMega323" displayName="ATMega323" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/ATMega323/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/ATMega323/port.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="AtmelSAM7S64"
+                         displayName="AtmelSAM7S64"
+                         projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/AtmelSAM7S64/AT91SAM7X128.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/AtmelSAM7S64/lib_AT91SAM7X128.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/AtmelSAM7S64/AT91SAM7X128_inc.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/AtmelSAM7S64/lib_AT91SAM7S64.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/AtmelSAM7S64/AT91SAM7X256_inc.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/AtmelSAM7S64/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/AtmelSAM7S64/AT91SAM7S64_inc.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/AtmelSAM7S64/AT91SAM7S64.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/AtmelSAM7S64/port.c</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/AtmelSAM7S64/ISR_Support.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/AtmelSAM7S64/lib_AT91SAM7X256.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/AtmelSAM7S64/AT91SAM7X256.h</itemPath>
+          </logicalFolder>
+          <logicalFolder name="AtmelSAM9XE" displayName="AtmelSAM9XE" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/AtmelSAM9XE/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/AtmelSAM9XE/port.c</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/AtmelSAM9XE/ISR_Support.h</itemPath>
+          </logicalFolder>
+          <logicalFolder name="AVR32_UC3" displayName="AVR32_UC3" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/AVR32_UC3/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/AVR32_UC3/read.c</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/AVR32_UC3/port.c</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/AVR32_UC3/write.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="AVR_AVRDx" displayName="AVR_AVRDx" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/AVR_AVRDx/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/AVR_AVRDx/porthardware.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/AVR_AVRDx/port.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="AVR_Mega0" displayName="AVR_Mega0" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/AVR_Mega0/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/AVR_Mega0/porthardware.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/AVR_Mega0/port.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="LPC2000" displayName="LPC2000" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/LPC2000/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/LPC2000/port.c</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/LPC2000/ISR_Support.h</itemPath>
+          </logicalFolder>
+          <logicalFolder name="MSP430" displayName="MSP430" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/MSP430/portasm.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/MSP430/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/MSP430/port.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="MSP430X" displayName="MSP430X" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/MSP430X/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/MSP430X/data_model.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/MSP430X/port.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="RISC-V" displayName="RISC-V" projectFiles="true">
+            <logicalFolder name="chip_specific_extensions"
+                           displayName="chip_specific_extensions"
+                           projectFiles="true">
+              <logicalFolder name="RV32I_CLINT_no_extensions"
+                             displayName="RV32I_CLINT_no_extensions"
+                             projectFiles="true">
+                <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/RISC-V/chip_specific_extensions/RV32I_CLINT_no_extensions/freertos_risc_v_chip_specific_extensions.h</itemPath>
+              </logicalFolder>
+            </logicalFolder>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/RISC-V/portASM.s</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/RISC-V/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/RISC-V/port.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="RL78" displayName="RL78" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/RL78/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/RL78/port.c</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/RL78/ISR_Support.h</itemPath>
+          </logicalFolder>
+          <logicalFolder name="RX100" displayName="RX100" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/RX100/port_asm.s</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/RX100/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/RX100/port.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="RX600" displayName="RX600" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/RX600/port_asm.s</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/RX600/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/RX600/port.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="RX700v3_DPFPU"
+                         displayName="RX700v3_DPFPU"
+                         projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/RX700v3_DPFPU/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/RX700v3_DPFPU/port.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="RXv2" displayName="RXv2" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/RXv2/port_asm.s</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/RXv2/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/RXv2/port.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="STR71x" displayName="STR71x" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/STR71x/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/STR71x/port.c</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/STR71x/ISR_Support.h</itemPath>
+          </logicalFolder>
+          <logicalFolder name="STR75x" displayName="STR75x" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/STR75x/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/STR75x/port.c</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/STR75x/ISR_Support.h</itemPath>
+          </logicalFolder>
+          <logicalFolder name="STR91x" displayName="STR91x" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/STR91x/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/STR91x/port.c</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/STR91x/ISR_Support.h</itemPath>
+          </logicalFolder>
+          <logicalFolder name="V850ES" displayName="V850ES" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/V850ES/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/V850ES/port.c</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/IAR/V850ES/ISR_Support.h</itemPath>
+          </logicalFolder>
+        </logicalFolder>
+        <logicalFolder name="Keil" displayName="Keil" projectFiles="true">
+        </logicalFolder>
+        <logicalFolder name="MemMang" displayName="MemMang" projectFiles="true">
+          <itemPath>../../../lib/afr/freertos_kernel/portable/MemMang/heap_3.c</itemPath>
+          <itemPath>../../../lib/afr/freertos_kernel/portable/MemMang/heap_4.c</itemPath>
+          <itemPath>../../../lib/afr/freertos_kernel/portable/MemMang/heap_5.c</itemPath>
+          <itemPath>../../../lib/afr/freertos_kernel/portable/MemMang/heap_1.c</itemPath>
+          <itemPath>../../../lib/afr/freertos_kernel/portable/MemMang/heap_2.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="MikroC" displayName="MikroC" projectFiles="true">
+          <logicalFolder name="ARM_CM4F" displayName="ARM_CM4F" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/MikroC/ARM_CM4F/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/MikroC/ARM_CM4F/port.c</itemPath>
+          </logicalFolder>
+        </logicalFolder>
+        <logicalFolder name="MPLAB" displayName="MPLAB" projectFiles="true">
+          <logicalFolder name="PIC18F" displayName="PIC18F" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/MPLAB/PIC18F/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/MPLAB/PIC18F/port.c</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/MPLAB/PIC18F/stdio.h</itemPath>
+          </logicalFolder>
+          <logicalFolder name="PIC24_dsPIC" displayName="PIC24_dsPIC" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/MPLAB/PIC24_dsPIC/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/MPLAB/PIC24_dsPIC/portasm_PIC24.S</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/MPLAB/PIC24_dsPIC/port.c</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/MPLAB/PIC24_dsPIC/portasm_dsPIC.S</itemPath>
+          </logicalFolder>
+          <logicalFolder name="PIC32MEC14xx"
+                         displayName="PIC32MEC14xx"
+                         projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/MPLAB/PIC32MEC14xx/port_asm.S</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/MPLAB/PIC32MEC14xx/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/MPLAB/PIC32MEC14xx/port.c</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/MPLAB/PIC32MEC14xx/ISR_Support.h</itemPath>
+          </logicalFolder>
+          <logicalFolder name="PIC32MX" displayName="PIC32MX" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/MPLAB/PIC32MX/port_asm.S</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/MPLAB/PIC32MX/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/MPLAB/PIC32MX/port.c</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/MPLAB/PIC32MX/ISR_Support.h</itemPath>
+          </logicalFolder>
+          <logicalFolder name="PIC32MZ" displayName="PIC32MZ" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/MPLAB/PIC32MZ/port_asm.S</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/MPLAB/PIC32MZ/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/MPLAB/PIC32MZ/port.c</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/MPLAB/PIC32MZ/ISR_Support.h</itemPath>
+          </logicalFolder>
+        </logicalFolder>
+        <logicalFolder name="MSVC-MingW" displayName="MSVC-MingW" projectFiles="true">
+          <itemPath>../../../lib/afr/freertos_kernel/portable/MSVC-MingW/portmacro.h</itemPath>
+          <itemPath>../../../lib/afr/freertos_kernel/portable/MSVC-MingW/port.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="oWatcom" displayName="oWatcom" projectFiles="true">
+          <logicalFolder name="16BitDOS" displayName="16BitDOS" projectFiles="true">
+            <logicalFolder name="common" displayName="common" projectFiles="true">
+              <itemPath>../../../lib/afr/freertos_kernel/portable/oWatcom/16BitDOS/common/portasm.h</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/oWatcom/16BitDOS/common/portcomn.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="Flsh186" displayName="Flsh186" projectFiles="true">
+              <itemPath>../../../lib/afr/freertos_kernel/portable/oWatcom/16BitDOS/Flsh186/portmacro.h</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/oWatcom/16BitDOS/Flsh186/port.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="PC" displayName="PC" projectFiles="true">
+              <itemPath>../../../lib/afr/freertos_kernel/portable/oWatcom/16BitDOS/PC/portmacro.h</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/oWatcom/16BitDOS/PC/port.c</itemPath>
+            </logicalFolder>
+          </logicalFolder>
+        </logicalFolder>
+        <logicalFolder name="Paradigm" displayName="Paradigm" projectFiles="true">
+          <logicalFolder name="Tern_EE" displayName="Tern_EE" projectFiles="true">
+            <logicalFolder name="large_untested"
+                           displayName="large_untested"
+                           projectFiles="true">
+              <itemPath>../../../lib/afr/freertos_kernel/portable/Paradigm/Tern_EE/large_untested/portasm.h</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/Paradigm/Tern_EE/large_untested/portmacro.h</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/Paradigm/Tern_EE/large_untested/port.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="small" displayName="small" projectFiles="true">
+              <itemPath>../../../lib/afr/freertos_kernel/portable/Paradigm/Tern_EE/small/portasm.h</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/Paradigm/Tern_EE/small/portmacro.h</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/Paradigm/Tern_EE/small/port.c</itemPath>
+            </logicalFolder>
+          </logicalFolder>
+        </logicalFolder>
+        <logicalFolder name="Renesas" displayName="Renesas" projectFiles="true">
+          <logicalFolder name="RX100" displayName="RX100" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/Renesas/RX100/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/Renesas/RX100/port.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="RX200" displayName="RX200" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/Renesas/RX200/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/Renesas/RX200/port.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="RX600" displayName="RX600" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/Renesas/RX600/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/Renesas/RX600/port.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="RX600v2" displayName="RX600v2" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/Renesas/RX600v2/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/Renesas/RX600v2/port.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="RX700v3_DPFPU"
+                         displayName="RX700v3_DPFPU"
+                         projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/Renesas/RX700v3_DPFPU/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/Renesas/RX700v3_DPFPU/port.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="SH2A_FPU" displayName="SH2A_FPU" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/Renesas/SH2A_FPU/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/Renesas/SH2A_FPU/ISR_Support.inc</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/Renesas/SH2A_FPU/port.c</itemPath>
+          </logicalFolder>
+        </logicalFolder>
+        <logicalFolder name="Rowley" displayName="Rowley" projectFiles="true">
+          <logicalFolder name="ARM7" displayName="ARM7" projectFiles="true">
+          </logicalFolder>
+          <logicalFolder name="MSP430F449" displayName="MSP430F449" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/Rowley/MSP430F449/portasm.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/Rowley/MSP430F449/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/Rowley/MSP430F449/port.c</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/Rowley/MSP430F449/portext.asm</itemPath>
+          </logicalFolder>
+        </logicalFolder>
+        <logicalFolder name="RVDS" displayName="RVDS" projectFiles="true">
+          <logicalFolder name="ARM7_LPC21xx"
+                         displayName="ARM7_LPC21xx"
+                         projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/RVDS/ARM7_LPC21xx/portASM.s</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/RVDS/ARM7_LPC21xx/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/RVDS/ARM7_LPC21xx/port.c</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/RVDS/ARM7_LPC21xx/portmacro.inc</itemPath>
+          </logicalFolder>
+          <logicalFolder name="ARM_CA9" displayName="ARM_CA9" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/RVDS/ARM_CA9/portASM.s</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/RVDS/ARM_CA9/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/RVDS/ARM_CA9/port.c</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/RVDS/ARM_CA9/portmacro.inc</itemPath>
+          </logicalFolder>
+          <logicalFolder name="ARM_CM0" displayName="ARM_CM0" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/RVDS/ARM_CM0/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/RVDS/ARM_CM0/port.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="ARM_CM3" displayName="ARM_CM3" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/RVDS/ARM_CM3/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/RVDS/ARM_CM3/port.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="ARM_CM4_MPU" displayName="ARM_CM4_MPU" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/RVDS/ARM_CM4_MPU/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/RVDS/ARM_CM4_MPU/port.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="ARM_CM4F" displayName="ARM_CM4F" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/RVDS/ARM_CM4F/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/RVDS/ARM_CM4F/port.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="ARM_CM7" displayName="ARM_CM7" projectFiles="true">
+            <logicalFolder name="r0p1" displayName="r0p1" projectFiles="true">
+              <itemPath>../../../lib/afr/freertos_kernel/portable/RVDS/ARM_CM7/r0p1/portmacro.h</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/RVDS/ARM_CM7/r0p1/port.c</itemPath>
+            </logicalFolder>
+          </logicalFolder>
+        </logicalFolder>
+        <logicalFolder name="SDCC" displayName="SDCC" projectFiles="true">
+          <logicalFolder name="Cygnal" displayName="Cygnal" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/SDCC/Cygnal/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/SDCC/Cygnal/port.c</itemPath>
+          </logicalFolder>
+        </logicalFolder>
+        <logicalFolder name="Softune" displayName="Softune" projectFiles="true">
+          <logicalFolder name="MB91460" displayName="MB91460" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/Softune/MB91460/__STD_LIB_sbrk.c</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/Softune/MB91460/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/Softune/MB91460/port.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="MB96340" displayName="MB96340" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/Softune/MB96340/__STD_LIB_sbrk.c</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/Softune/MB96340/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/Softune/MB96340/port.c</itemPath>
+          </logicalFolder>
+        </logicalFolder>
+        <logicalFolder name="Tasking" displayName="Tasking" projectFiles="true">
+          <logicalFolder name="ARM_CM4F" displayName="ARM_CM4F" projectFiles="true">
+            <itemPath>../../../lib/afr/freertos_kernel/portable/Tasking/ARM_CM4F/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/Tasking/ARM_CM4F/port_asm.asm</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/Tasking/ARM_CM4F/port.c</itemPath>
+          </logicalFolder>
+        </logicalFolder>
+        <logicalFolder name="ThirdParty" displayName="ThirdParty" projectFiles="true">
+          <logicalFolder name="CDK" displayName="CDK" projectFiles="true">
+            <logicalFolder name="T-HEAD_CK802"
+                           displayName="T-HEAD_CK802"
+                           projectFiles="true">
+              <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/CDK/T-HEAD_CK802/portasm.S</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/CDK/T-HEAD_CK802/portmacro.h</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/CDK/T-HEAD_CK802/port.c</itemPath>
+            </logicalFolder>
+          </logicalFolder>
+          <logicalFolder name="GCC" displayName="GCC" projectFiles="true">
+            <logicalFolder name="ARC_EM_HS" displayName="ARC_EM_HS" projectFiles="true">
+              <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/GCC/ARC_EM_HS/arc_freertos_exceptions.h</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/GCC/ARC_EM_HS/freertos_tls.c</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/GCC/ARC_EM_HS/arc_support.s</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/GCC/ARC_EM_HS/portmacro.h</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/GCC/ARC_EM_HS/arc_freertos_exceptions.c</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/GCC/ARC_EM_HS/port.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="ARC_v1" displayName="ARC_v1" projectFiles="true">
+              <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/GCC/ARC_v1/arc_freertos_exceptions.h</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/GCC/ARC_v1/arc_support.s</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/GCC/ARC_v1/portmacro.h</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/GCC/ARC_v1/arc_freertos_exceptions.c</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/GCC/ARC_v1/port.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="ARM_CM33_TFM"
+                           displayName="ARM_CM33_TFM"
+                           projectFiles="true">
+              <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/GCC/ARM_CM33_TFM/os_wrapper_freertos.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="ATmega" displayName="ATmega" projectFiles="true">
+              <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/GCC/ATmega/portmacro.h</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/GCC/ATmega/port.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="Posix" displayName="Posix" projectFiles="true">
+              <logicalFolder name="utils" displayName="utils" projectFiles="true">
+                <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/GCC/Posix/utils/wait_for_event.c</itemPath>
+                <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/GCC/Posix/utils/wait_for_event.h</itemPath>
+              </logicalFolder>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/GCC/Posix/portmacro.h</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/GCC/Posix/port.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="RISC-V" displayName="RISC-V" projectFiles="true">
+            </logicalFolder>
+            <logicalFolder name="Xtensa_ESP32"
+                           displayName="Xtensa_ESP32"
+                           projectFiles="true">
+              <logicalFolder name="include" displayName="include" projectFiles="true">
+                <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/GCC/Xtensa_ESP32/include/xtensa_context.h</itemPath>
+                <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/GCC/Xtensa_ESP32/include/xtensa_api.h</itemPath>
+                <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/GCC/Xtensa_ESP32/include/portbenchmark.h</itemPath>
+                <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/GCC/Xtensa_ESP32/include/xtensa_timer.h</itemPath>
+                <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/GCC/Xtensa_ESP32/include/portmacro.h</itemPath>
+                <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/GCC/Xtensa_ESP32/include/xtensa_rtos.h</itemPath>
+                <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/GCC/Xtensa_ESP32/include/xtensa_config.h</itemPath>
+              </logicalFolder>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/GCC/Xtensa_ESP32/xtensa_vector_defaults.S</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/GCC/Xtensa_ESP32/xtensa_vectors.S</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/GCC/Xtensa_ESP32/FreeRTOS-openocd.c</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/GCC/Xtensa_ESP32/portmux_impl.h</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/GCC/Xtensa_ESP32/portmux_impl.inc.h</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/GCC/Xtensa_ESP32/xtensa_context.S</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/GCC/Xtensa_ESP32/portasm.S</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/GCC/Xtensa_ESP32/xtensa_intr.c</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/GCC/Xtensa_ESP32/xtensa_init.c</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/GCC/Xtensa_ESP32/xtensa_loadstore_handler.S</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/GCC/Xtensa_ESP32/port.c</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/GCC/Xtensa_ESP32/xtensa_intr_asm.S</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/GCC/Xtensa_ESP32/xtensa_overlay_os_hook.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="Xtensa_ESP32_IDF3"
+                           displayName="Xtensa_ESP32_IDF3"
+                           projectFiles="true">
+              <logicalFolder name="include" displayName="include" projectFiles="true">
+                <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/GCC/Xtensa_ESP32_IDF3/include/xtensa_context.h</itemPath>
+                <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/GCC/Xtensa_ESP32_IDF3/include/xtensa_api.h</itemPath>
+                <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/GCC/Xtensa_ESP32_IDF3/include/portbenchmark.h</itemPath>
+                <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/GCC/Xtensa_ESP32_IDF3/include/xtensa_timer.h</itemPath>
+                <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/GCC/Xtensa_ESP32_IDF3/include/portmacro.h</itemPath>
+                <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/GCC/Xtensa_ESP32_IDF3/include/xtensa_rtos.h</itemPath>
+                <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/GCC/Xtensa_ESP32_IDF3/include/xtensa_config.h</itemPath>
+              </logicalFolder>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/GCC/Xtensa_ESP32_IDF3/xtensa_vector_defaults.S</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/GCC/Xtensa_ESP32_IDF3/xtensa_vectors.S</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/GCC/Xtensa_ESP32_IDF3/FreeRTOS-openocd.c</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/GCC/Xtensa_ESP32_IDF3/portmux_impl.h</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/GCC/Xtensa_ESP32_IDF3/portmux_impl.inc.h</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/GCC/Xtensa_ESP32_IDF3/xtensa_context.S</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/GCC/Xtensa_ESP32_IDF3/portasm.S</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/GCC/Xtensa_ESP32_IDF3/xtensa_intr.c</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/GCC/Xtensa_ESP32_IDF3/xtensa_init.c</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/GCC/Xtensa_ESP32_IDF3/xtensa_loadstore_handler.S</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/GCC/Xtensa_ESP32_IDF3/port.c</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/GCC/Xtensa_ESP32_IDF3/xtensa_intr_asm.S</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/GCC/Xtensa_ESP32_IDF3/xtensa_overlay_os_hook.c</itemPath>
+            </logicalFolder>
+          </logicalFolder>
+          <logicalFolder name="XCC" displayName="XCC" projectFiles="true">
+            <logicalFolder name="Xtensa" displayName="Xtensa" projectFiles="true">
+              <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/XCC/Xtensa/xtensa_vectors.S</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/XCC/Xtensa/xtensa_context.h</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/XCC/Xtensa/xtensa_api.h</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/XCC/Xtensa/xtensa_context.S</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/XCC/Xtensa/portasm.S</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/XCC/Xtensa/portbenchmark.h</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/XCC/Xtensa/xtensa_timer.h</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/XCC/Xtensa/xtensa_intr.c</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/XCC/Xtensa/portmacro.h</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/XCC/Xtensa/portclib.c</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/XCC/Xtensa/xtensa_init.c</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/XCC/Xtensa/porttrace.h</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/XCC/Xtensa/xtensa_rtos.h</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/XCC/Xtensa/port.c</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/XCC/Xtensa/xtensa_config.h</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/XCC/Xtensa/xtensa_intr_asm.S</itemPath>
+              <itemPath>../../../lib/afr/freertos_kernel/portable/ThirdParty/XCC/Xtensa/xtensa_overlay_os_hook.c</itemPath>
+            </logicalFolder>
+          </logicalFolder>
+        </logicalFolder>
+        <logicalFolder name="WizC" displayName="WizC" projectFiles="true">
+          <logicalFolder name="PIC18" displayName="PIC18" projectFiles="true">
+            <logicalFolder name="Drivers" displayName="Drivers" projectFiles="true">
+              <logicalFolder name="Tick" displayName="Tick" projectFiles="true">
+                <itemPath>../../../lib/afr/freertos_kernel/portable/WizC/PIC18/Drivers/Tick/Tick.c</itemPath>
+                <itemPath>../../../lib/afr/freertos_kernel/portable/WizC/PIC18/Drivers/Tick/isrTick.c</itemPath>
+              </logicalFolder>
+            </logicalFolder>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/WizC/PIC18/portmacro.h</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/WizC/PIC18/port.c</itemPath>
+            <itemPath>../../../lib/afr/freertos_kernel/portable/WizC/PIC18/addFreeRTOS.h</itemPath>
+          </logicalFolder>
+        </logicalFolder>
+      </logicalFolder>
+      <itemPath>../../../lib/afr/freertos_kernel/list.c</itemPath>
+      <itemPath>../../../lib/afr/freertos_kernel/stream_buffer.c</itemPath>
+      <itemPath>../../../lib/afr/freertos_kernel/queue.c</itemPath>
+      <itemPath>../../../lib/afr/freertos_kernel/timers.c</itemPath>
+      <itemPath>../../../lib/afr/freertos_kernel/tasks.c</itemPath>
+      <itemPath>../../../lib/afr/freertos_kernel/event_groups.c</itemPath>
+      <itemPath>../../../lib/afr/freertos_kernel/croutine.c</itemPath>
+    </logicalFolder>
+    <logicalFolder name="LinkerScript"
+                   displayName="Linker Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="SourceFiles" displayName="src" projectFiles="true">
+      <itemPath>../src/iot_softap_wifi_provisioning.c</itemPath>
+      <itemPath>../src/main.c</itemPath>
+    </logicalFolder>
+    <logicalFolder name="f1" displayName="vendor" projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceRootList>
+    <Elem>../inc</Elem>
+    <Elem>../src</Elem>
+    <Elem>../../../lib/afr/freertos_kernel</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="default" type="2">
+      <toolsSet>
+        <developmentServer>localhost</developmentServer>
+        <targetDevice>PIC32MZ2048EFM100</targetDevice>
+        <targetHeader></targetHeader>
+        <targetPluginBoard></targetPluginBoard>
+        <platformTool>PKOBSKDEPlatformTool</platformTool>
+        <languageToolchain>XC32</languageToolchain>
+        <languageToolchainVersion>2.41</languageToolchainVersion>
+        <platform>4</platform>
+      </toolsSet>
+      <packs>
+        <pack name="PIC32MZ-EF_DFP" vendor="Microchip" version="1.2.51"/>
+      </packs>
+      <ScriptingSettings>
+      </ScriptingSettings>
+      <compileType>
+        <linkerTool>
+          <linkerLibItems>
+          </linkerLibItems>
+        </linkerTool>
+        <archiverTool>
+        </archiverTool>
+        <loading>
+          <useAlternateLoadableFile>false</useAlternateLoadableFile>
+          <parseOnProdLoad>false</parseOnProdLoad>
+          <alternateLoadableFile></alternateLoadableFile>
+        </loading>
+        <subordinates>
+        </subordinates>
+      </compileType>
+      <makeCustomizationType>
+        <makeCustomizationPreStepEnabled>false</makeCustomizationPreStepEnabled>
+        <makeCustomizationPreStep></makeCustomizationPreStep>
+        <makeCustomizationPostStepEnabled>false</makeCustomizationPostStepEnabled>
+        <makeCustomizationPostStep></makeCustomizationPostStep>
+        <makeCustomizationPutChecksumInUserID>false</makeCustomizationPutChecksumInUserID>
+        <makeCustomizationEnableLongLines>false</makeCustomizationEnableLongLines>
+        <makeCustomizationNormalizeHexFile>false</makeCustomizationNormalizeHexFile>
+      </makeCustomizationType>
+      <C32>
+        <property key="additional-warnings" value="false"/>
+        <property key="addresss-attribute-use" value="false"/>
+        <property key="enable-app-io" value="false"/>
+        <property key="enable-omit-frame-pointer" value="false"/>
+        <property key="enable-symbols" value="true"/>
+        <property key="enable-unroll-loops" value="false"/>
+        <property key="exclude-floating-point" value="false"/>
+        <property key="extra-include-directories" value=""/>
+        <property key="generate-16-bit-code" value="false"/>
+        <property key="generate-micro-compressed-code" value="false"/>
+        <property key="isolate-each-function" value="false"/>
+        <property key="make-warnings-into-errors" value="false"/>
+        <property key="optimization-level" value=""/>
+        <property key="place-data-into-section" value="false"/>
+        <property key="post-instruction-scheduling" value="default"/>
+        <property key="pre-instruction-scheduling" value="default"/>
+        <property key="preprocessor-macros" value=""/>
+        <property key="strict-ansi" value="false"/>
+        <property key="support-ansi" value="false"/>
+        <property key="toplevel-reordering" value=""/>
+        <property key="unaligned-access" value=""/>
+        <property key="use-cci" value="false"/>
+        <property key="use-iar" value="false"/>
+        <property key="use-indirect-calls" value="false"/>
+      </C32>
+      <C32-AR>
+        <property key="additional-options-chop-files" value="false"/>
+      </C32-AR>
+      <C32-AS>
+        <property key="assembler-symbols" value=""/>
+        <property key="enable-symbols" value="true"/>
+        <property key="exclude-floating-point-library" value="false"/>
+        <property key="expand-macros" value="false"/>
+        <property key="extra-include-directories-for-assembler" value=""/>
+        <property key="extra-include-directories-for-preprocessor" value=""/>
+        <property key="false-conditionals" value="false"/>
+        <property key="generate-16-bit-code" value="false"/>
+        <property key="generate-micro-compressed-code" value="false"/>
+        <property key="keep-locals" value="false"/>
+        <property key="list-assembly" value="false"/>
+        <property key="list-source" value="false"/>
+        <property key="list-symbols" value="false"/>
+        <property key="oXC32asm-list-to-file" value="false"/>
+        <property key="omit-debug-dirs" value="false"/>
+        <property key="omit-forms" value="false"/>
+        <property key="preprocessor-macros" value=""/>
+        <property key="warning-level" value=""/>
+      </C32-AS>
+      <C32-CO>
+        <property key="coverage-enable" value=""/>
+      </C32-CO>
+      <C32-LD>
+        <property key="additional-options-use-response-files" value="false"/>
+        <property key="additional-options-write-sla" value="false"/>
+        <property key="allocate-dinit" value="false"/>
+        <property key="code-dinit" value="false"/>
+        <property key="ebase-addr" value=""/>
+        <property key="enable-check-sections" value="false"/>
+        <property key="exclude-floating-point-library" value="false"/>
+        <property key="exclude-standard-libraries" value="false"/>
+        <property key="extra-lib-directories" value=""/>
+        <property key="fill-flash-options-addr" value=""/>
+        <property key="fill-flash-options-const" value=""/>
+        <property key="fill-flash-options-how" value="0"/>
+        <property key="fill-flash-options-inc-const" value="1"/>
+        <property key="fill-flash-options-increment" value=""/>
+        <property key="fill-flash-options-seq" value=""/>
+        <property key="fill-flash-options-what" value="0"/>
+        <property key="generate-16-bit-code" value="false"/>
+        <property key="generate-cross-reference-file" value="false"/>
+        <property key="generate-micro-compressed-code" value="false"/>
+        <property key="heap-size" value=""/>
+        <property key="input-libraries" value=""/>
+        <property key="kseg-length" value=""/>
+        <property key="kseg-origin" value=""/>
+        <property key="linker-symbols" value=""/>
+        <property key="map-file" value="${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map"/>
+        <property key="no-device-startup-code" value="false"/>
+        <property key="no-startup-files" value="false"/>
+        <property key="oXC32ld-extra-opts" value=""/>
+        <property key="optimization-level" value=""/>
+        <property key="preprocessor-macros" value=""/>
+        <property key="remove-unused-sections" value="false"/>
+        <property key="report-memory-usage" value="false"/>
+        <property key="serial-length" value=""/>
+        <property key="serial-origin" value=""/>
+        <property key="stack-size" value=""/>
+        <property key="symbol-stripping" value=""/>
+        <property key="trace-symbols" value=""/>
+        <property key="warn-section-align" value="false"/>
+      </C32-LD>
+      <C32CPP>
+        <property key="additional-warnings" value="false"/>
+        <property key="addresss-attribute-use" value="false"/>
+        <property key="check-new" value="false"/>
+        <property key="eh-specs" value="true"/>
+        <property key="enable-app-io" value="false"/>
+        <property key="enable-omit-frame-pointer" value="false"/>
+        <property key="enable-symbols" value="true"/>
+        <property key="enable-unroll-loops" value="false"/>
+        <property key="exceptions" value="true"/>
+        <property key="exclude-floating-point" value="false"/>
+        <property key="extra-include-directories" value=""/>
+        <property key="generate-16-bit-code" value="false"/>
+        <property key="generate-micro-compressed-code" value="false"/>
+        <property key="isolate-each-function" value="false"/>
+        <property key="make-warnings-into-errors" value="false"/>
+        <property key="optimization-level" value=""/>
+        <property key="place-data-into-section" value="false"/>
+        <property key="post-instruction-scheduling" value="default"/>
+        <property key="pre-instruction-scheduling" value="default"/>
+        <property key="preprocessor-macros" value=""/>
+        <property key="rtti" value="true"/>
+        <property key="strict-ansi" value="false"/>
+        <property key="toplevel-reordering" value=""/>
+        <property key="unaligned-access" value=""/>
+        <property key="use-cci" value="false"/>
+        <property key="use-iar" value="false"/>
+        <property key="use-indirect-calls" value="false"/>
+      </C32CPP>
+      <C32Global>
+        <property key="common-include-directories" value=""/>
+        <property key="gp-relative-option" value=""/>
+        <property key="legacy-libc" value="true"/>
+        <property key="mdtcm" value=""/>
+        <property key="mitcm" value=""/>
+        <property key="mstacktcm" value="false"/>
+        <property key="omit-pack-options" value="1"/>
+        <property key="relaxed-math" value="false"/>
+        <property key="save-temps" value="false"/>
+        <property key="wpo-lto" value="false"/>
+      </C32Global>
+      <PKOBSKDEPlatformTool>
+        <property key="AutoSelectMemRanges" value="auto"/>
+        <property key="SecureSegment.SegmentProgramming" value="FullChipProgramming"/>
+        <property key="ToolFirmwareFilePath"
+                  value="Press to browse for a specific firmware version"/>
+        <property key="ToolFirmwareOption.UseLatestFirmware" value="true"/>
+        <property key="memories.configurationmemory" value="true"/>
+        <property key="memories.dataflash" value="true"/>
+        <property key="memories.eeprom" value="true"/>
+        <property key="memories.id" value="true"/>
+        <property key="memories.programmemory" value="true"/>
+        <property key="memories.programmemory.ranges" value="1d000000-1d1fffff"/>
+        <property key="memories.userotp" value="true"/>
+        <property key="programoptions.donoteraseauxmem" value="false"/>
+        <property key="programoptions.eraseb4program" value="true"/>
+        <property key="programoptions.preservedataflash" value="false"/>
+        <property key="programoptions.preservedataflash.ranges" value=""/>
+        <property key="programoptions.preserveeeprom" value="false"/>
+        <property key="programoptions.preserveeeprom.ranges"
+                  value="${memories.eedata.default}"/>
+        <property key="programoptions.preserveprogram.ranges" value=""/>
+        <property key="programoptions.preserveprogramrange" value="false"/>
+        <property key="programoptions.usehighvoltageonmclr" value="false"/>
+        <property key="programoptions.uselvpprogramming" value="true"/>
+      </PKOBSKDEPlatformTool>
+    </conf>
+  </confs>
+</configurationDescriptor>
