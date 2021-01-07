@@ -14,6 +14,7 @@
 #include "esp_interface.h"
 
 // BT/BLE
+#include "iot_ble.h"
 #include "esp_bt.h"
 #if CONFIG_NIMBLE_ENABLED == 1
     #include "esp_nimble_hci.h"
@@ -183,6 +184,10 @@ static void prvMiscInitialization( void )
     iot_uart_init();
 
     #if BLE_ENABLED
+        if( eBTStatusSuccess != IotBle_Init())
+        {
+            configPRINTF(("Failed to initialize BLE.\r\n"));
+        }
         NumericComparisonInit(&xConsoleStream);
     #endif
 
@@ -200,9 +205,51 @@ static void prvMiscInitialization( void )
 #endif
 }
 /*---------------------------------------------------------------------------------------------------------*/
+static BaseType_t prvTaskStatsCommand( char * pcWriteBuffer,
+                                       size_t xWriteBufferLen,
+                                       const char * pcCommandString )
+{
+    const char * const pcHeader = "Task          State  Priority  Stack	#\r\n************************************************\r\n";
+    size_t xStatus;
+
+    /* Remove compile time warnings about unused parameters, and check the
+     * write buffer is not NULL. */
+    ( void ) pcCommandString;
+    ( void ) xWriteBufferLen;
+    configASSERT( pcWriteBuffer );
+
+    /* Generate a table of task stats. */
+    xStatus = snprintf( pcWriteBuffer, xWriteBufferLen, pcHeader );
+
+    /* Assert condition that the buffer provided is enough to write the formatted string. If the buffer is not
+     * adequate, snprintf returns the total length required (without the null termination) for
+     * writing the formatted string to the buffer. If this assert condition is hit,
+     * adjust the output buffer to the required length as returned from snprintf.
+     */
+    configASSERT( ( xStatus >= 0 ) && ( xStatus < xWriteBufferLen ) );
+
+    vTaskList( pcWriteBuffer + strlen( pcHeader ) );
+
+    /* There is no more data to return after this single string, so return
+     * pdFALSE. */
+    return pdFALSE;
+}
+
+/*---------------------------------------------------------------------------------------------------------*/
+/* Structure that defines the "task-stats" command line command. */
+static const CLI_Command_Definition_t xCmd_TaskStats =
+{
+    "task-stats",        /* The command string to type. */
+    "\r\ntask-stats:\r\n    Displays a table showing the state of each FreeRTOS task\r\n\r\n",
+    prvTaskStatsCommand, /* The function to run. */
+    0                    /* No parameters are expected. */
+};
+
+/*---------------------------------------------------------------------------------------------------------*/
 
 void console_entry(void * pvParameters)
 {
+    FreeRTOS_CLIRegisterCommand(&xCmd_TaskStats);
     register_ble_commands();
     IOStream_t * pxConsoleStream = (IOStream_t *)pvParameters;
     xConsoleIO_t * pxConsoleIO = (xConsoleIO_t *)pxConsoleStream->pvStreamContext;

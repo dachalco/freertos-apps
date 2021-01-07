@@ -240,57 +240,58 @@ static BaseType_t xCmd_BleCli(char * pcWriteBuffer,
                               const char * pcCommandString)
 {
     BaseType_t xRetry = pdFALSE;
-
     uint32_t ulArgLength = 0;
     char * pcArg = NULL;
+    uint32_t offset = 0;
 
-    pcArg = FreeRTOS_CLIGetParameter(pcCommandString, 0, &ulArgLength);
-    if( 0 == strncmp("enable", pcArg, ulArgLength))
+    pcArg = FreeRTOS_CLIGetParameter(pcCommandString, 1, &ulArgLength);
+    if(0 == strncmp("enable", pcArg, ulArgLength))
     {
-        configPRINTF(("Enabling ble cli server...\r\n"));
-        if (eBTStatusSuccess != IotBle_Init() 
-            || eBTStatusSuccess != IotBle_On()
-            || !IotBleDataTransfer_Init()
-            || !(pxChannel_BleCli = IotBleDataTransfer_Open(0)))
+        offset += snprintf(pcWriteBuffer + offset, xWriteBufferLen - offset, "Enabling ble cli server...\r\n");
+        if (eBTStatusSuccess != IotBle_On() || !(pxChannel_BleCli = IotBleDataTransfer_Open(0)))
         {
-            configPRINTF(("Failed to start ble_cli\r\n"));
+            offset += snprintf(pcWriteBuffer + offset, xWriteBufferLen - offset, "Failed to start ble_cli\r\n");
             xRetry = pdTRUE;
         }
     }
     else if(0 == strncmp("disable", pcArg, ulArgLength))
     {
-        configPRINTF(("Disabling ble cli server...\r\n"));
-        IotBleDataTransfer_Close(pxChannel_BleCli);
-        if (!IotBleDataTransfer_Cleanup() || eBTStatusSuccess != IotBle_Off())
+        offset += snprintf(pcWriteBuffer + offset, xWriteBufferLen - offset, "Disabling ble cli server...\r\n");
+        if (eBTStatusSuccess != IotBle_Off())
         {
-            configPRINTF(("Failed to stop ble_cli.\r\n"));
+            offset += snprintf(pcWriteBuffer + offset, xWriteBufferLen - offset, "Failed to stop ble_cli.\r\n");
             xRetry = pdTRUE;
         }
         
     }
     else if(0 == strncmp("list", pcArg, ulArgLength))
     {
-        pcArg = FreeRTOS_CLIGetParameter(pcCommandString, 1, &ulArgLength);
+        pcArg = FreeRTOS_CLIGetParameter(pcCommandString, 2, &ulArgLength);
         if (0 == strncmp("paired", pcArg, ulArgLength))
         {
-            configPRINTF(("Listing paired devices...\r\n"));
+            offset += snprintf(pcWriteBuffer + offset, xWriteBufferLen - offset, "Listing paired devices...\r\n");
         }
         else if(0 == strncmp("connections", pcArg, ulArgLength))
         {
-            configPRINTF(("Listing connected devices...\r\n"));
+            offset += snprintf(pcWriteBuffer + offset, xWriteBufferLen - offset, "Listing connected devices...\r\n");
         }
     }
     else
     {
-        configPRINTF(("Usage error. See 'help'.\r\n"));
+        offset += snprintf(pcWriteBuffer + offset, xWriteBufferLen - offset, "Usage error. See 'help'.\r\n");
     }
 
     /* Console commands are repeatedly executed until they return pdFALSE for "no more output".
     * Wait a bit before re-attempting, instead of spamming CPU with immediate back-to-back failures (if any) */
     if (xRetry)
     {
-        vTaskDelay(pdMS_TO_TICKS(500));
+        vTaskDelay(pdMS_TO_TICKS(100));
+    } 
+    else
+    {
+        offset += snprintf(pcWriteBuffer + offset, xWriteBufferLen - offset,"Success.\r\n");
     }
+    
 
     return xRetry;
 }
@@ -301,7 +302,7 @@ static BaseType_t xCmd_BleCli(char * pcWriteBuffer,
 static const CLI_Command_Definition_t xCmd_BleCli_Command =
 {
     "ble_cli",
-    "\r\nble_cli <...>:\r\nInterface to ble cli server\r\n\r\n",
+    "\r\nble_cli [enable|disable|list]:\r\n    Interface to ble cli server\r\n\r\n",
     xCmd_BleCli,
     -1                       /* The user can enter any number of commands. */
 };

@@ -72,7 +72,7 @@
 
 
 #define LOGGER_TASK_STACK_SIZE            ( configMINIMAL_STACK_SIZE * 4 )
-#define LOGGER_TASK_PRIORITY              ( tskIDLE_PRIORITY + 5 )
+#define LOGGER_TASK_PRIORITY              ( tskIDLE_PRIORITY + 4 )
 #define LOGGER_MESSAGE_QUEUE_LENGTH       32
 
 #define CLI_UART_TASK_NAME                "cli-uart"
