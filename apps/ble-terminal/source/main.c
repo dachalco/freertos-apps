@@ -243,7 +243,7 @@ static const CLI_Command_Definition_t xCmd_TaskStats =
 };
 
 /*---------------------------------------------------------------------------------------------------------*/
-static int delay = 9;
+static int delay = 3;
 static BaseType_t prvBoardResetCommand(char * pcWriteBuffer, size_t xWriteBufferLen, const char * pcCommandString )
 {   
     BaseType_t xContinue = pdTRUE;
