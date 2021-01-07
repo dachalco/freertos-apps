@@ -36,6 +36,9 @@
 // CLI
 #include "FreeRTOS_CLI_UART.h"
 
+// ESP32 Board utils
+#include "esp_system.h"
+
 
 /* TODO:
     - freertos cli does not handle backspaces properly. Should account for this
@@ -168,8 +171,6 @@ static void iot_uart_init( void )
 extern void vApplicationIPInit( void );
 static void prvMiscInitialization( void )
 {
-    int32_t uartRet;
-
     /* Initialize NVS */
     esp_err_t ret = nvs_flash_init();
 
@@ -205,9 +206,7 @@ static void prvMiscInitialization( void )
 #endif
 }
 /*---------------------------------------------------------------------------------------------------------*/
-static BaseType_t prvTaskStatsCommand( char * pcWriteBuffer,
-                                       size_t xWriteBufferLen,
-                                       const char * pcCommandString )
+static BaseType_t prvTaskStatsCommand( char * pcWriteBuffer, size_t xWriteBufferLen, const char * pcCommandString )
 {
     const char * const pcHeader = "Task          State  Priority  Stack	#\r\n************************************************\r\n";
     size_t xStatus;
@@ -226,7 +225,7 @@ static BaseType_t prvTaskStatsCommand( char * pcWriteBuffer,
      * writing the formatted string to the buffer. If this assert condition is hit,
      * adjust the output buffer to the required length as returned from snprintf.
      */
-    configASSERT( ( xStatus >= 0 ) && ( xStatus < xWriteBufferLen ) );
+    configASSERT( ( xStatus > 0 ) && ( xStatus < xWriteBufferLen ) );
 
     vTaskList( pcWriteBuffer + strlen( pcHeader ) );
 
@@ -235,14 +234,52 @@ static BaseType_t prvTaskStatsCommand( char * pcWriteBuffer,
     return pdFALSE;
 }
 
-/*---------------------------------------------------------------------------------------------------------*/
-/* Structure that defines the "task-stats" command line command. */
 static const CLI_Command_Definition_t xCmd_TaskStats =
 {
-    "task-stats",        /* The command string to type. */
+    "task-stats",        
     "\r\ntask-stats:\r\n    Displays a table showing the state of each FreeRTOS task\r\n\r\n",
-    prvTaskStatsCommand, /* The function to run. */
-    0                    /* No parameters are expected. */
+    prvTaskStatsCommand, 
+    0                  
+};
+
+/*---------------------------------------------------------------------------------------------------------*/
+static int delay = 9;
+static BaseType_t prvBoardResetCommand(char * pcWriteBuffer, size_t xWriteBufferLen, const char * pcCommandString )
+{   
+    BaseType_t xContinue = pdTRUE;
+    size_t offset = 0;
+
+    /* Stall for a bit, allowing other tasks some more time to wrap up any work.
+     * TODO: Can broadcast notification to all tasks for reset */
+    if(delay == 3 )
+    {
+        offset += snprintf(pcWriteBuffer + offset, xWriteBufferLen - offset, "\r\nReset in %d...", delay);
+        vTaskDelay(pdMS_TO_TICKS(1000));
+        delay--;
+    }
+    else if(delay == 0)
+    { 
+        /* Finished with delay. Restart the board */
+        xContinue = pdFALSE;
+        delay = 3;
+        esp_restart();
+    } 
+    else 
+    {
+        offset += snprintf(pcWriteBuffer + offset, xWriteBufferLen - offset, "%d...", delay);
+        vTaskDelay(pdMS_TO_TICKS(1000));
+        delay--;
+    }
+
+    return xContinue;
+}
+
+static const CLI_Command_Definition_t xCmd_BoardReset =
+{
+    "reset",        
+    "\r\nreset:\r\n    Resets both CPUs then relaunches bootloader\r\n\r\n",
+    prvBoardResetCommand, 
+    0              
 };
 
 /*---------------------------------------------------------------------------------------------------------*/
@@ -250,6 +287,7 @@ static const CLI_Command_Definition_t xCmd_TaskStats =
 void console_entry(void * pvParameters)
 {
     FreeRTOS_CLIRegisterCommand(&xCmd_TaskStats);
+    FreeRTOS_CLIRegisterCommand(&xCmd_BoardReset);
     register_ble_commands();
     IOStream_t * pxConsoleStream = (IOStream_t *)pvParameters;
     xConsoleIO_t * pxConsoleIO = (xConsoleIO_t *)pxConsoleStream->pvStreamContext;
