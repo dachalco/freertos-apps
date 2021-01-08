@@ -34,6 +34,7 @@
 #include "io_stream.h"
 
 // CLI
+#include "FreeRTOS_CLI_Console.h"
 #include "FreeRTOS_CLI_UART.h"
 
 // ESP32 Board utils
@@ -189,7 +190,6 @@ static void prvMiscInitialization( void )
         {
             configPRINTF(("Failed to initialize BLE.\r\n"));
         }
-        NumericComparisonInit(&xConsoleStream);
     #endif
 
     /* Create tasks that are not dependent on the WiFi being initialized. */
@@ -206,7 +206,7 @@ static void prvMiscInitialization( void )
 #endif
 }
 /*---------------------------------------------------------------------------------------------------------*/
-static BaseType_t prvTaskStatsCommand( char * pcWriteBuffer, size_t xWriteBufferLen, const char * pcCommandString )
+static BaseType_t prvTaskStatsCommand( char * pcWriteBuffer, size_t xWriteBufferLen, const char * pcCommandString, void * pvCtx )
 {
     const char * const pcHeader = "Task          State  Priority  Stack	#\r\n************************************************\r\n";
     size_t xStatus;
@@ -244,7 +244,7 @@ static const CLI_Command_Definition_t xCmd_TaskStats =
 
 /*---------------------------------------------------------------------------------------------------------*/
 static int delay = 3;
-static BaseType_t prvBoardResetCommand(char * pcWriteBuffer, size_t xWriteBufferLen, const char * pcCommandString )
+static BaseType_t prvBoardResetCommand(char * pcWriteBuffer, size_t xWriteBufferLen, const char * pcCommandString, void * pvCtx )
 {   
     BaseType_t xContinue = pdTRUE;
     size_t offset = 0;
@@ -286,11 +286,25 @@ static const CLI_Command_Definition_t xCmd_BoardReset =
 
 void console_entry(void * pvParameters)
 {
+    IOStream_t * pxConsoleStream = (IOStream_t *)pvParameters;
+    xConsoleIO_t * pxConsoleIO = (xConsoleIO_t *)pxConsoleStream->pvStreamContext;
+
+    /* Command registry */
     FreeRTOS_CLIRegisterCommand(&xCmd_TaskStats);
     FreeRTOS_CLIRegisterCommand(&xCmd_BoardReset);
     register_ble_commands();
-    IOStream_t * pxConsoleStream = (IOStream_t *)pvParameters;
-    xConsoleIO_t * pxConsoleIO = (xConsoleIO_t *)pxConsoleStream->pvStreamContext;
+
+    /* The mutex is used to syncronize outputs to console */
+    pxConsoleIO->xMutexIO = xSemaphoreCreateMutex();
+    configASSERT(pxConsoleIO->xMutexIO);
+
+    /* This queue is used to pass input lines to foreground commands 
+     * Side benefit, it's tailing line inputs. This history can be reused with arrow keys for replays */
+    pxConsoleIO->xQueue_InputLine = xQueueCreate( cmdINPUT_QUEUE_LENGTH, cmdMAX_INPUT_BUFFER_SIZE );
+    configASSERT( pxConsoleIO->xQueue_InputLine );
+
+    NumericComparisonInit( pxConsoleStream );
+
     FreeRTOS_CLIEnterConsoleLoop( *pxConsoleIO, 
                                   pxConsoleStream->pcStreamIn, pxConsoleStream->xCapacityIn, 
                                   pxConsoleStream->pcStreamOut, pxConsoleStream->xCapacityOut );

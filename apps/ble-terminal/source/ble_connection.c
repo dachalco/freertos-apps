@@ -99,16 +99,6 @@ typedef struct
 #endif /* if CONFIG_NIMBLE_ENABLED == 1 */
 
 
-static void prvUartCallback( IotUARTOperationStatus_t xStatus,
-                                    void * pvUserContext )
-{
-    SemaphoreHandle_t xUartSem = ( SemaphoreHandle_t ) pvUserContext;
-    configASSERT( xUartSem != NULL );
-    xSemaphoreGive( xUartSem );
-}
-
-
-
 /*---------------------------------------------------------------------------------------------------------*/
 /*  Pairing */
 /*---------------------------------------------------------------------------------------------------------*/
@@ -118,41 +108,6 @@ typedef struct{
 }INPUTMessage_t;
 
 #if( IOT_BLE_ENABLE_NUMERIC_COMPARISON == 1 )
-BaseType_t getUserMessage( INPUTMessage_t * pxINPUTmessage,
-                            TickType_t xAuthTimeout)
-{
-    BaseType_t xReturnMessage = pdFALSE;
-    SemaphoreHandle_t xUartSem;
-    int32_t status, bytesRead = 0;
-    uint8_t * pucResponse = NULL;
-
-    /* BLE Numeric comparison response is one character (y/n). */
-    pucResponse = ( uint8_t * ) pvPortMalloc( sizeof( uint8_t ) );
-    xUartSem = xSemaphoreCreateBinary();
-
-    if( ( xUartSem != NULL ) && ( pucResponse != NULL ) )
-    {
-        /* Wait for user to input to CLI for AuthTimeout ticks */
-        iot_uart_set_callback( xConsoleUart, prvUartCallback, xUartSem );
-        status = iot_uart_read_async( xConsoleUart, pucResponse, 1 );
-        xSemaphoreTake( xUartSem, xAuthTimeout );
-        iot_uart_cancel( xConsoleUart );
-        iot_uart_set_callback( xConsoleUart, NULL, NULL );
-
-        /* Verify, sanitize, and format user input */
-        iot_uart_ioctl( xConsoleUart, eGetRxNoOfbytes, &bytesRead );
-        if( bytesRead == 1 )
-        {
-            pxINPUTmessage->pcData = pucResponse;
-            pxINPUTmessage->xDataSize = 1;
-            xReturnMessage = pdTRUE;
-        }
-
-        vSemaphoreDelete( xUartSem );
-    }
-
-    return xReturnMessage;
-}
 
 /* Temporarly intercept the CLI, as a new device is trying to pair and requires verification of passkey */
 void BLENumericComparisonCb(BTBdaddr_t * pxRemoteBdAddr, uint32_t ulPassKey)
@@ -168,64 +123,56 @@ void BLENumericComparisonCb(BTBdaddr_t * pxRemoteBdAddr, uint32_t ulPassKey)
 	}
 }
 
-void userInputTask(void * pvParameters)
+static bool bPendingResponse = false;
+BaseType_t vServicePairRequest(xConsoleIO_t * pxConsoleIO, char * pcWriteBuffer, size_t xWriteBufferLen, TickType_t xServiceWindow)
 {
-	INPUTMessage_t xINPUTmessage;
+    IotBleEventsCallbacks_t eventCallback;
     BLEPassKeyConfirm_t xPassKeyConfirm;
     uint32_t ulOutLength = 0;
+    bool userVerified = false;
+    char pcLineInput[ cmdMAX_INPUT_BUFFER_SIZE ] = { 0 };
     TickType_t xAuthTimeout = pdMS_TO_TICKS( IOT_BLE_NUMERIC_COMPARISON_TIMEOUT_SEC * 1000 );
+    
+    /* Enable pairing responses */
+    eventCallback.pNumericComparisonCb = BLENumericComparisonCb;
+    IotBle_RegisterEventCb( eBLENumericComparisonCallback, eventCallback );
 
-    /* Exract args */    
-    IOStream_t * pxIOStream = (IOStream_t *) pvParameters;
-    xConsoleIO_t * pxConsoleIO = (xConsoleIO_t *)pxIOStream->pvStreamContext;
+    /* Wait a second for a pairing request */
+    if (xQueueReceive(xNumericComparisonQueue, (void * )&xPassKeyConfirm, xServiceWindow))
+    {
+        /* Ask user, are the numbers the same? Then flush output */
+        ulOutLength = snprintf(pcWriteBuffer,
+                            xWriteBufferLen,
+                            "Numeric comparison:%ld\r\n"
+                            "Press 'y' to confirm\r\n",
+                            xPassKeyConfirm.ulPassKey);
+        pxConsoleIO->write(pcWriteBuffer, ulOutLength);
 
-    for (;;) {
-    	if (xQueueReceive(xNumericComparisonQueue, (void * )&xPassKeyConfirm, portMAX_DELAY ))
-    	{
-            ulOutLength = snprintf(pxIOStream->pcStreamOut,
-                                   pxIOStream->xCapacityOut,
-                                   "Numeric comparison:%ld\r\n"
-                                   "Press 'y' to confirm\r\n",
-                                   xPassKeyConfirm.ulPassKey);
-            
-            pxConsoleIO->write(pxIOStream->pcStreamOut, ulOutLength);
-            
-            
-            /* Waiting for UART event. */
-            if ( getUserMessage( &xINPUTmessage, xAuthTimeout ) == pdTRUE ) {
-                if((xINPUTmessage.pcData[0] == 'y')||(xINPUTmessage.pcData[0] == 'Y'))
-                {
-                    ulOutLength = snprintf(pxIOStream->pcStreamOut, pxIOStream->xCapacityOut, "Key accepted\r\n");
-                    IotBle_ConfirmNumericComparisonKeys(&xPassKeyConfirm.xAddress, true);
-                }else
-                {
-                    ulOutLength = snprintf(pxIOStream->pcStreamOut, pxIOStream->xCapacityOut, "Key rejected\r\n");
-                    IotBle_ConfirmNumericComparisonKeys(&xPassKeyConfirm.xAddress, false);
-
-                }
-
-                pxConsoleIO->write(pxIOStream->pcStreamOut, ulOutLength);
-                vPortFree(xINPUTmessage.pcData);
-            }
-    	}
+        /* Flush input buffer and wait for user response */
+        xQueueReset( pxConsoleIO->xQueue_InputLine );
+        if(xQueueReceive(pxConsoleIO->xQueue_InputLine, pcLineInput, xAuthTimeout))
+        {
+            userVerified = (pcLineInput[0] == 'Y' || pcLineInput[0] == 'y');
+            IotBle_ConfirmNumericComparisonKeys( &xPassKeyConfirm.xAddress, userVerified );
+            snprintf(pcWriteBuffer, xWriteBufferLen, userVerified ? "Confirmed\r\n" : "Rejected\r\n");
+        }
+        else
+        {
+            snprintf(pcWriteBuffer, xWriteBufferLen, "Timeout\r\n");
+        }
     }
 
-    vTaskDelete(NULL);
+    /* Disable pairing responses */
+    IotBle_UnRegisterEventCb( eBLENumericComparisonCallback, eventCallback );
+
+    /* The pairing subcommand indefinitely accepts and services pair requests. Stop with CTRL+C*/
+    return pdTRUE;
 }
 
-void NumericComparisonInit( IOStream_t * const pxIOStream )
+void NumericComparisonInit(void)
 {
-    /* Create a queue that will pass in the code to the UART task and wait validation from the user. */
     xNumericComparisonQueue = xQueueCreate( 1, sizeof( BLEPassKeyConfirm_t ) );
-
-    /* Pass the consoleIO handle so task shares same IO read/write stream */
-    /* TODO: These should use user-configurable params*/
-    xTaskCreate(userInputTask, 
-                BLE_PAIRING_TASK_NAME,
-                BLE_PAIRING_TASK_STACK_SIZE, 
-                ( void *)pxIOStream, 
-                BLE_PAIRING_TASK_PRIORITY, 
-                NULL);
+    configASSERT(xNumericComparisonQueue);
 }
 
 void NumericComparisonDeinit(void)
@@ -237,21 +184,30 @@ void NumericComparisonDeinit(void)
 /* When enabled, MCU will advertise and cooperate with a pseudo-UART Gatt server */
 static BaseType_t xCmd_BleCli(char * pcWriteBuffer,
                               size_t xWriteBufferLen,
-                              const char * pcCommandString)
+                              const char * pcCommandString,
+                              void * pvContext)
 {
-    BaseType_t xRetry = pdFALSE;
+    BaseType_t xContinue = pdFALSE;
     uint32_t ulArgLength = 0;
     char * pcArg = NULL;
     uint32_t offset = 0;
+    xConsoleIO_t * pxConsoleIO = (xConsoleIO_t *)pvContext;
+
+    /* At the moment all commands are passed the xConsoleIO_t * they correspond with */
+    configASSERT(pxConsoleIO);
 
     pcArg = FreeRTOS_CLIGetParameter(pcCommandString, 1, &ulArgLength);
     if(0 == strncmp("enable", pcArg, ulArgLength))
     {
+        IotBleEventsCallbacks_t eventCallback;
+        eventCallback.pNumericComparisonCb = BLENumericComparisonCb;
         offset += snprintf(pcWriteBuffer + offset, xWriteBufferLen - offset, "Enabling ble cli server...\r\n");
-        if (eBTStatusSuccess != IotBle_On() || !(pxChannel_BleCli = IotBleDataTransfer_Open(0)))
+        if (eBTStatusSuccess != IotBle_On()
+            || eBTStatusSuccess != IotBle_RegisterEventCb( eBLENumericComparisonCallback, eventCallback )
+            || !(pxChannel_BleCli = IotBleDataTransfer_Open(0)))
         {
             offset += snprintf(pcWriteBuffer + offset, xWriteBufferLen - offset, "Failed to start ble_cli\r\n");
-            xRetry = pdTRUE;
+            xContinue = pdTRUE;
         }
     }
     else if(0 == strncmp("disable", pcArg, ulArgLength))
@@ -260,7 +216,7 @@ static BaseType_t xCmd_BleCli(char * pcWriteBuffer,
         if (eBTStatusSuccess != IotBle_Off())
         {
             offset += snprintf(pcWriteBuffer + offset, xWriteBufferLen - offset, "Failed to stop ble_cli.\r\n");
-            xRetry = pdTRUE;
+            xContinue = pdTRUE;
         }
         
     }
@@ -276,6 +232,11 @@ static BaseType_t xCmd_BleCli(char * pcWriteBuffer,
             offset += snprintf(pcWriteBuffer + offset, xWriteBufferLen - offset, "Listing connected devices...\r\n");
         }
     }
+    else if(0 == strncmp("pair", pcArg, ulArgLength))
+    {
+        offset += snprintf(pcWriteBuffer + offset, xWriteBufferLen - offset, "Accepting pair requests...\r\n");
+        xContinue = vServicePairRequest(pxConsoleIO, pcWriteBuffer + offset, xWriteBufferLen - offset, pdMS_TO_TICKS(1000));
+    }
     else
     {
         offset += snprintf(pcWriteBuffer + offset, xWriteBufferLen - offset, "Usage error. See 'help'.\r\n");
@@ -283,7 +244,7 @@ static BaseType_t xCmd_BleCli(char * pcWriteBuffer,
 
     /* Console commands are repeatedly executed until they return pdFALSE for "no more output".
     * Wait a bit before re-attempting, instead of spamming CPU with immediate back-to-back failures (if any) */
-    if (xRetry)
+    if (xContinue)
     {
         vTaskDelay(pdMS_TO_TICKS(100));
     } 
@@ -293,10 +254,8 @@ static BaseType_t xCmd_BleCli(char * pcWriteBuffer,
     }
     
 
-    return xRetry;
+    return xContinue;
 }
-
-
 
 /* Command for interfacing the ble cli. For example it can be used to start advertising, prompt pairing, etc*/
 static const CLI_Command_Definition_t xCmd_BleCli_Command =
@@ -310,5 +269,7 @@ static const CLI_Command_Definition_t xCmd_BleCli_Command =
 /* CLI command */
 void register_ble_commands( void )
 {
+    NumericComparisonInit();
+
     FreeRTOS_CLIRegisterCommand(&xCmd_BleCli_Command);
 }
