@@ -1,4 +1,0 @@
-[submodule "lib/afr"]
-	path = lib/afr
-	url = git@github.com:aws/amazon-freertos.git
-	branch = 202012.00
